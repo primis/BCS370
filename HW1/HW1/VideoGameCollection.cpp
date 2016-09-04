@@ -25,9 +25,8 @@
 //******************************************
 VideoGameCollection::VideoGameCollection()
 {   
-    // This constructor is blank because the array is initialized when it's
-    // Created and the VideoGame default constructor takes care of making
-    // "sane" default values for us.
+    // We want to have a clean slate when we start.
+    Initialize();
 }
 
 //******************************************
@@ -40,9 +39,9 @@ void VideoGameCollection::Set(int index, VideoGame v)
 {
     // Remember, you have to deal with v when you're done storing it.
     // This isn't a reference copy.
-    Get(index).setPrice  = v.getPrice();
-    Get(index).setRating = v.getRating();
-    Get(index).setTitle  = v.getTitle();
+    Get(index).setPrice(v.getPrice());
+    Get(index).setRating(v.getRating());
+    Get(index).setTitle(v.getTitle());
 }
 
 //******************************************
@@ -65,6 +64,7 @@ int VideoGameCollection::Size()
 //******************************************
 VideoGame VideoGameCollection::Get(int index)
 {
+    // This is the only time we use the raw array.
     return games[index];
 }
 
@@ -78,10 +78,11 @@ int VideoGameCollection::PriceRangeCount(double lowerBound, double upperBound)
 {
     // Counter.
     int c = 0;
+    // Iterator.
     int i;
-    // Walk the array
+    // Walk the collection
     for (i = 0; i < Size(); i++) {
-        if (upperBound >= Get(i).getPrice >= lowerBound) {
+        if (upperBound >= Get(i).getPrice() && Get(i).getPrice() >= lowerBound) {
             c++;
         }
     }
@@ -97,14 +98,15 @@ int VideoGameCollection::PriceRangeCount(double lowerBound, double upperBound)
 VideoGame VideoGameCollection::MostExpensive()
 {
     int i;
+    // Init max to 0.0 so we can check properly.
     double max = 0.0;
     VideoGame v;
 
     // Traverse the list, find most pricey.
     // If prices are the same, uses last instance.
     for (i = 0; i < Size(); i++) {
-        if (Get(i).getPrice >= max) {
-            max = Get(i).getPrice;
+        if (Get(i).getPrice() >= max) {
+            max = Get(i).getPrice();
             v = Get(i);
         }
     }
@@ -122,11 +124,13 @@ bool VideoGameCollection::FindByTitle(string title, VideoGame &v)
 {
     int i;
     for (i = 0; i < Size(); i++) {
-        if (Get(i).getTitle == title) {
+        if (Get(i).getTitle() == title) {
+            // We found it, set v and return true.
             v = Get(i);
             return true;
         }
     }
+    // If we've reached this point, it doesn't exist.
     return false;
 }
 
@@ -138,9 +142,11 @@ bool VideoGameCollection::FindByTitle(string title, VideoGame &v)
 //******************************************
 double VideoGameCollection::TotalValue()
 {
+    // Iterator.
     int i;
+    // Init total to 0.0 so we don't end up with an incorrect answer.
     double total = 0.0;
-
+    // Add them all up.
     for (i = 0; i < Size(); i++) {
         total += Get(i).getPrice();
     }
@@ -156,11 +162,11 @@ double VideoGameCollection::TotalValue()
 void VideoGameCollection::Initialize()
 {
     int i;
-
+    // Init each individual object to a clean value.
     for (i = 0; i < Size(); i++) {
-        Get(i).setPrice  = 0.0;
-        Get(i).setRating = "";
-        Get(i).setTitle  = "";
+        Get(i).setPrice(0.0);
+        Get(i).setRating("");
+        Get(i).setTitle("");
     }
 }
 
@@ -172,5 +178,7 @@ void VideoGameCollection::Initialize()
 //******************************************
 string VideoGameCollection::GetAuthor()
 {
+    // Located in VideoGameCollection.h
+    // Default Value is Nicholas Sargente
     return WHY_IS_THIS_PART_OF_THE_HOMEWORK;
 }
