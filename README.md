@@ -1,2 +1,2 @@
 # BCS370
-Arthur Hoskey's Data Structures Class at SUNY Farmingdale
+Lin Yuan's Data Structures Class at SUNY Farmingdale
