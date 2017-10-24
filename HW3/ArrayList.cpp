@@ -9,7 +9,6 @@
 * 02/11/2017, By Jun Yuan, modified for BCS370 lab2
 * 02/18/2017, By Jun Yuan, modified for BCS370 lab3
 * 09/26/2017, By Jun Yuan, modified for BCS370 lab2
-* 10/20/2017, By Nicholas Sargente
 ******************************************************/
 
 #include <iostream>
@@ -17,7 +16,6 @@
 #include <assert.h>
 #include <string>
 #include <iomanip>
-#include <algorithm>
 #include "ArrayList.h"
 using namespace std;
 using namespace farmingdale_yuanj;
@@ -32,10 +30,6 @@ int ArrayList::LengthIs() const {
 }
 int ArrayList::CapacityIs() const {
 	return capacity;
-}
-// Sort List after a file operation.
-void ArrayList::Sort() {
-	sort(data, data + length);
 }
 void ArrayList::RetrieveItem(record & item, bool& found) {
 	int location = 0;
@@ -56,7 +50,6 @@ void ArrayList::InsertItem(record item) {
 	//	return;
 	//}
 	data[length++] = item;
-	ArrayList::Sort();
 }
 
 void ArrayList::DeleteItem(record item) {
@@ -65,7 +58,7 @@ void ArrayList::DeleteItem(record item) {
 		location++;
 	data[location] = data[length - 1];
 	length--;
-	ArrayList::Sort();
+
 }
 
 void ArrayList::ResetList() {
