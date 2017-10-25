@@ -10,6 +10,7 @@
 * 02/18/2017, By Jun Yuan, modified for BCS370 lab3
 * 08/28/2017, By Jun Yuan, modified for BCS370 lab1
 * 09/26/2017, By Jun Yuan, modified for BCS370 lab2
+* 10/25/2017, By Nicholas Sargente, Modified for BCS lab 3
 ******************************************************/
 #ifndef DATA_MANAGEMENT_H
 #define DATA_MANAGEMENT_H

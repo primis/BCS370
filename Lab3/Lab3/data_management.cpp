@@ -1,4 +1,4 @@
-/******************************************************
+﻿/******************************************************
 * File: data_management.cpp
 *
 * We are redesigning and rewriting this application based
@@ -11,6 +11,7 @@
 * 02/18/2017, By Jun Yuan, modified for BCS370 lab3
 * 08/28/2017, By Jun Yuan, modified for BCS370 lab1
 * 09/26/2017, By Jun Yuan, modified for BCS370 lab2
+* 10/25/2017, By Nicholas Sargente, Modified for BCS lab 3
 ******************************************************/
 
 #include <iostream>
@@ -41,7 +42,7 @@ void data_management::displayAllRecords() {
 			}
 		}
 	}
-	cout << "========the end of the records ==============" << endl;
+	cout << "======== the end of the records ==============" << endl;
 }
 
 void data_management::addRecord(string name, string cell) {
@@ -107,7 +108,7 @@ void data_management::displayAbout() {
 	cout << "|                                           |" << endl;
 	cout << "| Welcome to my little data management!     |" << endl;
 	cout << "|                                           |" << endl;
-	cout << "|  Author:                                  |" << endl;
+	cout << "|  Author: Nicholas Sargente                |" << endl;
 	cout << "|  BCS370 Farmingdale State College         |" << endl;
 	cout << "+-------------------------------------------+" << endl;
 }
