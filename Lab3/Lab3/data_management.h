@@ -17,10 +17,10 @@
 #include "record.h"
 #include "ArrayList.h"
 using namespace std;
-namespace farmingdale_yuanj {
+namespace farmingdale_sargnj {
 	class data_management {
 	private:
-		ArrayList * list;
+		ArrayList<record> * list;
 	public:
 		data_management(string);
 		data_management(const data_management &);

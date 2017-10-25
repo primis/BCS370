@@ -16,7 +16,7 @@
 #define RECORD_H
 #include <string>
 using namespace std;
-namespace farmingdale_yuanj {
+namespace farmingdale_sargnj {
 	class record {
 	private:
 		//storing the name of the user

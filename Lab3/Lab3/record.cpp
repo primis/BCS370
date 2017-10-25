@@ -13,7 +13,7 @@
 ******************************************************/
 #include "record.h"
 using namespace std;
-using namespace farmingdale_yuanj;
+using namespace farmingdale_sargnj;
 record::record(string name, string cell) {
 	m_name = name;
 	m_cell = cell;

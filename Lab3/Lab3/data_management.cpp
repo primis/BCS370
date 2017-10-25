@@ -20,7 +20,7 @@
 #include <iomanip>
 #include "data_management.h"
 using namespace std;
-using namespace farmingdale_yuanj;
+using namespace farmingdale_sargnj;
 
 void data_management::displayAllRecords() {
 	//we are going to traverse the list
@@ -121,7 +121,7 @@ data_management::data_management(string path) {
 	}
 	string temp;
 	int i = 0;
-	list = new ArrayList();
+	list = new ArrayList<record>();
 	while (getline(fin, temp)) {
 		if (list->IsFull()) {
 		//yes the caller is responsible for checking
@@ -159,6 +159,6 @@ data_management & data_management::operator=(const data_management & right) {
 }
 
 data_management::data_management(const data_management & dm) {
-	list = new ArrayList(*dm.list);
+	list = new ArrayList<record>(*dm.list);
 	//is this right?
 }

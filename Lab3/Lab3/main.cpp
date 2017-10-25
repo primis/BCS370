@@ -18,7 +18,7 @@
 #include <iomanip>
 #include "data_management.h"
 using namespace std;
-using namespace farmingdale_yuanj;
+using namespace farmingdale_sargnj;
 void get_valid_option(int & n) {
 	cin >> n;
 	while (cin.fail() || n<1 || n>9) {
